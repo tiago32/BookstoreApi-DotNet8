@@ -15,6 +15,9 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
+Console.WriteLine("App is starting up...");
+
+
 // Configure the HTTP request pipeline.
 
 app.UseSwagger();
@@ -96,6 +99,8 @@ app.MapGet("/books", async (BookDb db, string? author) =>
 });
 
 app.Urls.Add("http://+:80");
+
+Console.WriteLine("App is ready and listening.");
 
 
 app.Run();
